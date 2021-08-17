@@ -1,3 +1,5 @@
+import { Switch, Route } from 'react-router';
+
 import GlobalStyles from './global.styles';
 
 import Homepage from './pages/homepage';
@@ -7,7 +9,11 @@ function App() {
     <>
       <GlobalStyles />
 
-      <Homepage />
+      <Switch>
+        <Route path="/" exact>
+          <Homepage />
+        </Route>
+      </Switch>
     </>
   );
 }
