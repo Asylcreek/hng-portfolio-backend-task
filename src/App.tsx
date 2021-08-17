@@ -1,5 +1,15 @@
+import GlobalStyles from './global.styles';
+
+import Homepage from './pages/homepage';
+
 function App() {
-  return <div></div>;
+  return (
+    <>
+      <GlobalStyles />
+
+      <Homepage />
+    </>
+  );
 }
 
 export default App;
