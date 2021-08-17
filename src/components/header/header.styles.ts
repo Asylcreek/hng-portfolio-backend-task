@@ -32,6 +32,7 @@ export const HeaderWrapper = styled.header`
 export const BrandName = styled.p`
   font-size: 2.4rem;
   font-weight: 700;
+  cursor: pointer;
 `;
 
 export const NavList = styled.ul`

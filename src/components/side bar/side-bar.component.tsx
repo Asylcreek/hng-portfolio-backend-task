@@ -3,6 +3,7 @@ import { FC } from 'react';
 interface ISideBarProps {
   closeSideBar: () => void;
   animationStyles?: Record<string, unknown>;
+  scrollToId: (id: string) => void;
 }
 
 import {
@@ -13,9 +14,12 @@ import {
 } from './side-bar.styles';
 
 import SvgIcon from '../svg icon/svg-icon.component';
-import { Link } from 'react-router-dom';
 
-const SideBar: FC<ISideBarProps> = ({ closeSideBar, animationStyles }) => {
+const SideBar: FC<ISideBarProps> = ({
+  closeSideBar,
+  animationStyles,
+  scrollToId,
+}) => {
   return (
     <>
       <SideBarOverlay onClick={() => closeSideBar()} />
@@ -24,20 +28,12 @@ const SideBar: FC<ISideBarProps> = ({ closeSideBar, animationStyles }) => {
         <SvgIcon iconName="close" big onClick={() => closeSideBar()} />
 
         <SideBarLinks>
-          <SideBarLink>
-            <Link to="#about">About</Link>
-          </SideBarLink>
+          <SideBarLink onClick={() => scrollToId('about')}>About</SideBarLink>
 
-          <SideBarLink>
-            <Link to="#skills">Skills</Link>
-          </SideBarLink>
+          <SideBarLink onClick={() => scrollToId('skills')}>Skills</SideBarLink>
 
-          <SideBarLink>
-            <Link to="#experience">Experience</Link>
-          </SideBarLink>
-
-          <SideBarLink>
-            <Link to="#contact">Contact</Link>
+          <SideBarLink onClick={() => scrollToId('contact')}>
+            Contact
           </SideBarLink>
         </SideBarLinks>
       </SideBarWrapper>

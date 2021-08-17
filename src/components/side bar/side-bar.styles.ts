@@ -59,6 +59,7 @@ export const SideBarLink = styled.li`
   font-weight: 600;
   width: fit-content;
   padding: 2px 2.7rem 2px 1.6rem;
+  cursor: pointer;
 
   & > a {
     text-transform: uppercase;

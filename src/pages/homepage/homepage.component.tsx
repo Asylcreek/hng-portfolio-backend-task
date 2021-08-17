@@ -30,6 +30,8 @@ import SvgIcon from '../../components/svg icon/svg-icon.component';
 import Person from '../../assets/person.svg';
 import Me from '../../assets/me2.jpg';
 
+import { scrollToId } from '../../components/header/header.component';
+
 const Homepage: FC = () => {
   return (
     <>
@@ -54,7 +56,7 @@ const Homepage: FC = () => {
               A full stack web developer & avid problem solver
             </HeroTextTitle>
 
-            <Button>
+            <Button type="button" onClick={() => scrollToId('contact')}>
               Get in touch! <SvgIcon iconName="arrow-right" />
             </Button>
           </HeroTexts>
