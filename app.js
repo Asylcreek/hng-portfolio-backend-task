@@ -11,7 +11,7 @@ const AppError = require('./utils/appError');
 const app = express();
 
 const emailLimiter = rateLimit({
-    max: 5,
+    max: 20,
     windowMs: 60 * 60 * 1000,
     message: `Too many requests from this IP, please try again in 1 hour`,
     handler: function(req, res) {
