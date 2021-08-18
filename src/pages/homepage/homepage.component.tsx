@@ -19,7 +19,6 @@ import {
   HeroTextName,
   HeroTexts,
   HeroTextTitle,
-  MySkill,
   MySkillProgress,
   MySkills,
   MySkillsSection,
@@ -125,7 +124,7 @@ const Homepage: FC = () => {
           </MySkillsSubHeading>
 
           <MySkills>
-            <MySkill>
+            <div>
               <MySkillTexts>
                 <p>HTML5</p>
 
@@ -133,9 +132,9 @@ const Homepage: FC = () => {
               </MySkillTexts>
 
               <MySkillProgress amount={85} />
-            </MySkill>
+            </div>
 
-            <MySkill>
+            <div>
               <MySkillTexts>
                 <p>CSS3</p>
 
@@ -143,9 +142,9 @@ const Homepage: FC = () => {
               </MySkillTexts>
 
               <MySkillProgress amount={85} />
-            </MySkill>
+            </div>
 
-            <MySkill>
+            <div>
               <MySkillTexts>
                 <p>JavaScript</p>
 
@@ -153,9 +152,9 @@ const Homepage: FC = () => {
               </MySkillTexts>
 
               <MySkillProgress amount={90} />
-            </MySkill>
+            </div>
 
-            <MySkill>
+            <div>
               <MySkillTexts>
                 <p>React</p>
 
@@ -163,9 +162,9 @@ const Homepage: FC = () => {
               </MySkillTexts>
 
               <MySkillProgress amount={90} />
-            </MySkill>
+            </div>
 
-            <MySkill>
+            <div>
               <MySkillTexts>
                 <p>NextJS</p>
 
@@ -173,9 +172,9 @@ const Homepage: FC = () => {
               </MySkillTexts>
 
               <MySkillProgress amount={75} />
-            </MySkill>
+            </div>
 
-            <MySkill>
+            <div>
               <MySkillTexts>
                 <p>NodeJS</p>
 
@@ -183,9 +182,9 @@ const Homepage: FC = () => {
               </MySkillTexts>
 
               <MySkillProgress amount={85} />
-            </MySkill>
+            </div>
 
-            <MySkill>
+            <div>
               <MySkillTexts>
                 <p>Git</p>
 
@@ -193,9 +192,9 @@ const Homepage: FC = () => {
               </MySkillTexts>
 
               <MySkillProgress amount={80} />
-            </MySkill>
+            </div>
 
-            <MySkill>
+            <div>
               <MySkillTexts>
                 <p>MongoDB</p>
 
@@ -203,7 +202,7 @@ const Homepage: FC = () => {
               </MySkillTexts>
 
               <MySkillProgress amount={85} />
-            </MySkill>
+            </div>
           </MySkills>
         </MySkillsSection>
 

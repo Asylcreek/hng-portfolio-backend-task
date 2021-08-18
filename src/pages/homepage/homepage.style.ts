@@ -112,7 +112,7 @@ export const WavesWrapper = styled.div`
 
 export const AboutSection = styled.section`
   position: relative;
-  padding: 23rem 3rem 5rem;
+  padding: 23rem 3rem 8rem;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -127,7 +127,7 @@ export const AboutSection = styled.section`
   }
 
   @media only screen and (min-width: 48.75em) {
-    padding: 23rem 6.4rem 5rem;
+    padding: 23rem 3rem 8rem;
   }
 `;
 
@@ -221,15 +221,11 @@ export const SectionHeading = styled.h2`
 `;
 
 export const MySkillsSection = styled.section`
-  padding: 1.5rem 3rem 5rem;
+  padding: 5rem 3rem 8rem;
 
   @media only screen and (max-width: 20em) {
     padding: 2.4rem;
     padding-bottom: 4rem;
-  }
-
-  @media only screen and (min-width: 48.75em) {
-    padding: 2.4rem 6.4rem;
   }
 `;
 
@@ -251,8 +247,6 @@ export const MySkills = styled.div`
   column-gap: 15rem;
   row-gap: 2rem;
 `;
-
-export const MySkill = styled.div``;
 
 export const MySkillTexts = styled.div`
   font-size: 1.4rem;
@@ -286,7 +280,7 @@ export const MySkillProgress = styled.div<IMySkillProgressProps>`
 `;
 
 export const ContactSection = styled.section`
-  padding: 5rem;
+  padding: 5rem 5rem 8rem;
 
   & > h2 {
     margin-bottom: 9rem;
@@ -295,10 +289,6 @@ export const ContactSection = styled.section`
   @media only screen and (max-width: 20em) {
     padding: 2.4rem;
     padding-bottom: 4rem;
-  }
-
-  @media only screen and (min-width: 48.75em) {
-    padding: 5rem;
   }
 `;
 
