@@ -284,3 +284,100 @@ export const MySkillProgress = styled.div<IMySkillProgressProps>`
     background-color: ${colors.primary};
   }
 `;
+
+export const ContactSection = styled.section`
+  padding: 5rem;
+
+  & > h2 {
+    margin-bottom: 9rem;
+  }
+
+  @media only screen and (max-width: 20em) {
+    padding: 2.4rem;
+    padding-bottom: 4rem;
+  }
+
+  @media only screen and (min-width: 48.75em) {
+    padding: 5rem;
+  }
+`;
+
+export const ContactFormTexts = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+`;
+
+export const ContactForm = styled.form`
+  background-color: ${colors.light};
+  padding: 3.2rem;
+  width: 100%;
+  max-width: 50rem;
+
+  @media only screen and (min-width: 68.75em) {
+    margin-right: 2.5rem;
+  }
+`;
+
+export const ContactFormInputContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  & > label {
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  & > input,
+  & > textarea {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    padding: 0.8rem 1.2rem;
+    background-color: ${colors.white};
+    border: 2px solid #e9ecef;
+    border-radius: 1rem;
+    transition-property: border-color, box-shadow;
+    transition-duration: 0.2s;
+
+    &:focus {
+      border-color: rgba(246, 224, 94, 0.25);
+      outline: none;
+      box-shadow: 0 0 0 0.25rem rgba(246, 224, 94, 0.25);
+    }
+  }
+
+  & > textarea {
+    resize: none;
+    height: 12rem;
+  }
+
+  &:not(:last-of-type) {
+    margin-bottom: 1.6rem;
+  }
+
+  &:last-of-type {
+    margin-bottom: 3.2rem;
+  }
+`;
+
+export const ContactTexts = styled.div`
+  padding-top: 4rem;
+  max-width: 50rem;
+  transition: padding 0.2s;
+
+  & > h3 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  & > p {
+    margin: 2rem 0;
+  }
+
+  @media only screen and (min-width: 68.75em) {
+    padding-top: 2rem;
+  }
+`;

@@ -7,6 +7,11 @@ import {
   AboutSectionListItem,
   AboutSectionText,
   AboutSectionTextWrapper,
+  ContactForm,
+  ContactFormInputContainer,
+  ContactFormTexts,
+  ContactSection,
+  ContactTexts,
   HeroImgWrapper,
   HeroSection,
   HeroTextHello,
@@ -199,6 +204,62 @@ const Homepage: FC = () => {
             </MySkill>
           </MySkills>
         </MySkillsSection>
+
+        {/* Contact Section */}
+        <ContactSection id="contact">
+          <SectionHeading>Contact me</SectionHeading>
+
+          <ContactFormTexts>
+            <ContactForm>
+              <ContactFormInputContainer>
+                <label htmlFor="name">Name</label>
+
+                <input type="text" name="name" id="name" />
+              </ContactFormInputContainer>
+
+              <ContactFormInputContainer>
+                <label htmlFor="email">Email</label>
+
+                <input type="email" name="email" id="email" />
+              </ContactFormInputContainer>
+
+              <ContactFormInputContainer>
+                <label htmlFor="message">Message</label>
+
+                <textarea name="message" id="message" />
+              </ContactFormInputContainer>
+
+              <Button type="button">Send</Button>
+            </ContactForm>
+
+            <ContactTexts>
+              <h3>Let's talk about that problem</h3>
+
+              <p>
+                Want to avail my services? Drop a message for me using the form
+                or get in touch using my email or phone number
+              </p>
+
+              <ul>
+                <AboutSectionListItem>
+                  <span>Email:</span>
+                  <span>
+                    <a href="mailto:omokugbobr@gmail.com">
+                      omokugbobr@gmail.com
+                    </a>
+                  </span>
+                </AboutSectionListItem>
+
+                <AboutSectionListItem>
+                  <span>Phone:</span>
+                  <span>
+                    <a href="tel:+2349068982847">+2349068982847</a>
+                  </span>
+                </AboutSectionListItem>
+              </ul>
+            </ContactTexts>
+          </ContactFormTexts>
+        </ContactSection>
       </main>
 
       <footer></footer>
