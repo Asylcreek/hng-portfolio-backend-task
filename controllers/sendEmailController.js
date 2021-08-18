@@ -20,7 +20,6 @@ exports.sendEmail = catchAsync(async(req, res, next) => {
             }).sendSuccessAdmin({ email, name, message }),
         ]);
     } catch (err) {
-        console.log(err);
         return next(new AppError('Are you sure your email is correct?', 400));
     }
 
