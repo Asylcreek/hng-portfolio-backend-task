@@ -10,17 +10,14 @@ const AppError = require('./utils/appError');
 
 const app = express();
 
-const limiter = rateLimit({
+const emailLimiter = rateLimit({
     max: 5,
     windowMs: 60 * 60 * 1000,
-    message: `Too many request from this IP, please try again in 1 hour
-  } minutes`,
+    message: `Too many requests from this IP, please try again in 1 hour`,
     handler: function(req, res) {
         res.status(this.statusCode).json({ status: 'fail', message: this.message });
     },
 });
-
-app.use(limiter);
 
 app.use(express.json({ limit: '10kb' }));
 
@@ -34,7 +31,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.post('/api/v1/send-message', emailController.sendEmail);
+app.post('/api/v1/send-message', emailLimiter, emailController.sendEmail);
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, 'frontend/build')));
