@@ -1,11 +1,23 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import { colors } from '../../global.styles';
 
 import Marker from '../../assets/marker.svg';
 import Waves from '../../assets/waves.svg';
 
-export const Main = styled.main``;
+const slideUp = keyframes`
+  0%{
+    transform: translateY(1rem);
+  }
+  100%{
+    transform: translateY(0);
+  }
+`;
+
+export const Main = styled.main`
+  max-width: 140rem;
+  margin: 0 auto;
+`;
 
 export const HeroSection = styled.section`
   position: relative;
@@ -57,6 +69,7 @@ export const HeroTextHello = styled.p`
   text-transform: uppercase;
   margin-bottom: 1rem;
   letter-spacing: 1px;
+  animation-name: ${slideUp};
 
   @media only screen and (min-width: 50em) {
     margin-bottom: 2rem;

@@ -19,6 +19,7 @@ import {
   HeroTextName,
   HeroTexts,
   HeroTextTitle,
+  Main,
   MySkillProgress,
   MySkills,
   MySkillsSection,
@@ -43,7 +44,7 @@ const Homepage: FC = () => {
     <>
       <Header />
 
-      <main>
+      <Main>
         {/* Hero Section */}
         <HeroSection>
           <HeroImgWrapper>
@@ -261,7 +262,7 @@ const Homepage: FC = () => {
             </ContactTexts>
           </ContactFormTexts>
         </ContactSection>
-      </main>
+      </Main>
 
       <Footer>
         <h4>Boro Omokugbo</h4>
