@@ -6,13 +6,21 @@ import Marker from '../../assets/marker.svg';
 import Waves from '../../assets/waves.svg';
 
 const slideUp = keyframes`
-  0%{
-    transform: translateY(1rem);
+  from{
+    opacity: 0;
+    transform: translateY(3.5rem);
   }
-  100%{
+
+  to{
+    opacity: 1;
     transform: translateY(0);
   }
 `;
+
+const helloTextAnimationDelay = '0s';
+const nameAnimationDelay = '1s';
+const descriptionAnimationDelay = '2s';
+const getInTouchAnimationDelay = '2.9s';
 
 export const Main = styled.main`
   max-width: 140rem;
@@ -35,9 +43,6 @@ export const HeroSection = styled.section`
   @media only screen and (min-width: 48.75em) {
     padding: 2.4rem 6.4rem;
   }
-
-  @media only screen and (min-width: 65.625em) {
-  }
 `;
 
 export const HeroImgWrapper = styled.div`
@@ -58,6 +63,11 @@ export const HeroImgWrapper = styled.div`
 `;
 
 export const HeroTexts = styled.div`
+  & > button {
+    opacity: 0;
+    animation: ${slideUp} 1s ease-out ${getInTouchAnimationDelay} forwards;
+  }
+
   @media only screen and (min-width: 50em) {
     margin-top: 7rem;
   }
@@ -69,7 +79,9 @@ export const HeroTextHello = styled.p`
   text-transform: uppercase;
   margin-bottom: 1rem;
   letter-spacing: 1px;
-  animation-name: ${slideUp};
+  opacity: 0;
+  animation: ${slideUp} 1s ease-out ${helloTextAnimationDelay} forwards;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 
   @media only screen and (min-width: 50em) {
     margin-bottom: 2rem;
@@ -81,6 +93,8 @@ export const HeroTextName = styled.h1`
   font-size: calc(2.2rem + 1.5vw);
   position: relative;
   margin-bottom: 3.5rem;
+  opacity: 0;
+  animation: ${slideUp} 1s ease-out ${nameAnimationDelay} forwards;
 
   &::after {
     content: '';
@@ -109,6 +123,8 @@ export const HeroTextTitle = styled.p`
   font-size: 2rem;
   text-transform: capitalize;
   margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: ${slideUp} 1s ease-out ${descriptionAnimationDelay} forwards;
 `;
 
 export const WavesWrapper = styled.div`

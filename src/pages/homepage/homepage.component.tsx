@@ -80,7 +80,7 @@ const Homepage: FC = () => {
               I am passionate about bringing users the best browsing experience
               possible. I am a skilled front end and back end web developer, and
               I use tools such as NextJS, ReactJS, NodeJS, MongoDB to bring
-              dreams to live.
+              dreams to life.
             </AboutSectionText>
 
             <ul>
