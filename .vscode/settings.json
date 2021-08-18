@@ -1,11 +1,5 @@
 {
-  "cSpell.words": [
-    "Asylcreek's",
-    "Nunito",
-    "Parens",
-    "Surulere",
-    "nowrap",
-    "paren",
-    "preconnect"
-  ]
+"eslint.workingDirectories": [
+        "./frontend"
+    ]
 }
