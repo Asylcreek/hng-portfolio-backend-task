@@ -381,3 +381,36 @@ export const ContactTexts = styled.div`
     padding-top: 2rem;
   }
 `;
+
+export const Footer = styled.footer`
+  position: relative;
+  padding: 5rem;
+  background-color: ${colors.light};
+  text-align: center;
+
+  & > div {
+    width: 20rem;
+    margin: 0 auto 2rem;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  & > h4 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  & > p:first-of-type {
+    margin: 2rem 0;
+  }
+
+  & > p:last-of-type {
+    & > a {
+      text-decoration: underline;
+    }
+  }
+`;

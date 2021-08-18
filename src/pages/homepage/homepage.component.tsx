@@ -12,6 +12,7 @@ import {
   ContactFormTexts,
   ContactSection,
   ContactTexts,
+  Footer,
   HeroImgWrapper,
   HeroSection,
   HeroTextHello,
@@ -34,6 +35,7 @@ import SvgIcon from '../../components/svg icon/svg-icon.component';
 
 import Person from '../../assets/person.svg';
 import Me from '../../assets/me2.jpg';
+import HNGLogo from '../../assets/brand-logo.png';
 
 import { scrollToId } from '../../components/header/header.component';
 
@@ -262,7 +264,24 @@ const Homepage: FC = () => {
         </ContactSection>
       </main>
 
-      <footer></footer>
+      <Footer>
+        <h4>Boro Omokugbo</h4>
+
+        <p>Full stack web developer & avid problem solver</p>
+
+        <div>
+          <a href="https://hng.tech/">
+            <img src={HNGLogo} alt="HNG logo" />
+          </a>
+        </div>
+
+        <p>
+          Template from{' '}
+          <a href="https://templateflip.com/demo/templates/super-folio/">
+            Super Folio
+          </a>
+        </p>
+      </Footer>
     </>
   );
 };
