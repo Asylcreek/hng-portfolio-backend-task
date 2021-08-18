@@ -1,4 +1,6 @@
 import { FC } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import axios from 'axios';
 
 import {
   AboutSection,
@@ -19,6 +21,7 @@ import {
   HeroTextName,
   HeroTexts,
   HeroTextTitle,
+  InputErrorMessage,
   Main,
   MySkillProgress,
   MySkills,
@@ -39,7 +42,37 @@ import HNGLogo from '../../assets/brand-logo.png';
 
 import { scrollToId } from '../../components/header/header.component';
 
+type ContactFormValueTypes = {
+  name: string;
+  email: string;
+  message: string;
+};
+
 const Homepage: FC = () => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<ContactFormValueTypes>({
+    defaultValues: { name: '', email: '', message: '' },
+  });
+
+  const onSubmit: SubmitHandler<ContactFormValueTypes> = async (data) => {
+    //Send the message
+    try {
+      await axios.post('/api/v1/send-message', data);
+
+      //Clear form values
+      reset();
+
+      alert('Your message has been sent successfully');
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (err: any) {
+      alert(err.response.data.message);
+    }
+  };
+
   return (
     <>
       <Header />
@@ -212,26 +245,57 @@ const Homepage: FC = () => {
           <SectionHeading>Contact me</SectionHeading>
 
           <ContactFormTexts>
-            <ContactForm>
-              <ContactFormInputContainer>
+            <ContactForm onSubmit={handleSubmit(onSubmit)}>
+              <ContactFormInputContainer error={errors?.name ? true : false}>
                 <label htmlFor="name">Name</label>
 
-                <input type="text" name="name" id="name" />
+                <input
+                  type="text"
+                  id="name"
+                  {...register('name', { required: 'Please enter your name' })}
+                />
+
+                {errors?.name && (
+                  <InputErrorMessage>{errors?.name.message}</InputErrorMessage>
+                )}
               </ContactFormInputContainer>
 
-              <ContactFormInputContainer>
+              <ContactFormInputContainer error={errors?.email ? true : false}>
                 <label htmlFor="email">Email</label>
 
-                <input type="email" name="email" id="email" />
+                <input
+                  type="email"
+                  id="email"
+                  {...register('email', {
+                    required: 'Please enter your email',
+                  })}
+                />
+
+                {errors?.email && (
+                  <InputErrorMessage>{errors?.email.message}</InputErrorMessage>
+                )}
               </ContactFormInputContainer>
 
-              <ContactFormInputContainer>
+              <ContactFormInputContainer error={errors?.message ? true : false}>
                 <label htmlFor="message">Message</label>
 
-                <textarea name="message" id="message" />
+                <textarea
+                  id="message"
+                  {...register('message', {
+                    required: 'Please enter your message',
+                  })}
+                />
+
+                {errors?.message && (
+                  <InputErrorMessage>
+                    {errors?.message.message}
+                  </InputErrorMessage>
+                )}
               </ContactFormInputContainer>
 
-              <Button type="button">Send</Button>
+              <Button disabled={isSubmitting}>
+                {isSubmitting ? 'Sending...' : 'Send'}
+              </Button>
             </ContactForm>
 
             <ContactTexts>

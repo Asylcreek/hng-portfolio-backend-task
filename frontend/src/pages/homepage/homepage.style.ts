@@ -5,6 +5,14 @@ import { colors } from '../../global.styles';
 import Marker from '../../assets/marker.svg';
 import Waves from '../../assets/waves.svg';
 
+interface IMySkillProgressProps {
+  amount: number;
+}
+
+interface IFormInputContainerProps {
+  error: boolean;
+}
+
 const slideUp = keyframes`
   from{
     opacity: 0;
@@ -284,10 +292,6 @@ export const MySkillTexts = styled.div`
   justify-content: space-between;
 `;
 
-interface IMySkillProgressProps {
-  amount: number;
-}
-
 export const MySkillProgress = styled.div<IMySkillProgressProps>`
   position: relative;
   margin-top: 8px;
@@ -338,7 +342,8 @@ export const ContactForm = styled.form`
   }
 `;
 
-export const ContactFormInputContainer = styled.div`
+export const ContactFormInputContainer = styled.div<IFormInputContainerProps>`
+  position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -356,6 +361,7 @@ export const ContactFormInputContainer = styled.div`
     color: inherit;
     padding: 0.8rem 1.2rem;
     background-color: ${colors.white};
+    outline: none;
     border: 2px solid #e9ecef;
     border-radius: 1rem;
     transition-property: border-color, box-shadow;
@@ -363,9 +369,18 @@ export const ContactFormInputContainer = styled.div`
 
     &:focus {
       border-color: rgba(246, 224, 94, 0.25);
-      outline: none;
       box-shadow: 0 0 0 0.25rem rgba(246, 224, 94, 0.25);
     }
+
+    ${({ error }) =>
+      error &&
+      `
+    border-color: ${colors.danger};
+    
+    &:focus{
+      border-color: ${colors.danger};
+      box-shadow: 0 0 0 0.25rem ${colors.danger};}
+    `}
   }
 
   & > textarea {
@@ -380,6 +395,14 @@ export const ContactFormInputContainer = styled.div`
   &:last-of-type {
     margin-bottom: 3.2rem;
   }
+`;
+
+export const InputErrorMessage = styled.p`
+  color: ${colors.danger};
+  font-size: 1rem;
+  position: absolute;
+  bottom: -2.1rem;
+  left: 1rem;
 `;
 
 export const ContactTexts = styled.div`
